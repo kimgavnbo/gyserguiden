@@ -3,188 +3,39 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- UDFYLD: titel på artiklen -->
-<title>OVERSKRIFT — Gyserguiden</title>
-<!-- UDFYLD: 120-155 tegn, opsummerer nyheden -->
-<meta name="description" content="">
+<title>Silent Hill-instruktøren afslører nyt psykologisk horrorspil — Gyserguiden</title>
+<meta name="description" content="Efter tre års stilhed har studiet løftet sløret for et titelløst projekt med fokus på atmosfære frem for action.">
 <link rel="stylesheet" href="/assets/css/base.css">
 <link rel="stylesheet" href="/assets/css/components.css">
 <style>
-  .article-wrap {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 60px 0 100px;
-  }
-
-  /* Breadcrumb + kategori-tag */
-  .article-eyebrow {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 28px;
-    flex-wrap: wrap;
-  }
-  .article-eyebrow .breadcrumb {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    color: var(--text-dim);
-    text-transform: uppercase;
-  }
+  .article-wrap { max-width: 720px; margin: 0 auto; padding: 60px 0 100px; }
+  .article-eyebrow { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; flex-wrap: wrap; }
+  .article-eyebrow .breadcrumb { font-family: var(--mono); font-size: 11px; letter-spacing: 0.15em; color: var(--text-dim); text-transform: uppercase; }
   .article-eyebrow .breadcrumb a { color: var(--accent-bright); }
   .article-eyebrow .breadcrumb span { margin: 0 6px; }
-
-  .kat-tag {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    padding: 5px 10px;
-    border: 1px solid var(--accent);
-    background: rgba(160, 24, 24, 0.08);
-    color: var(--accent-bright);
-  }
-
-  /* H1 */
-  .article-wrap h1 {
-    font-family: var(--display);
-    font-size: clamp(28px, 4vw, 44px);
-    font-weight: 700;
-    line-height: 1.1;
-    letter-spacing: -0.025em;
-    margin-bottom: 20px;
-    color: var(--text);
-  }
-
-  /* Excerpt / ingress */
-  .article-excerpt {
-    font-size: 19px;
-    color: var(--text-muted);
-    line-height: 1.6;
-    margin-bottom: 32px;
-    padding-bottom: 32px;
-    border-bottom: 1px solid var(--border);
-    font-weight: 400;
-  }
-
-  /* Byline-bar */
-  .byline-bar {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 52px;
-    flex-wrap: wrap;
-  }
-  .byline-author {
-    font-family: var(--display);
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--text);
-  }
-  .byline-divider {
-    width: 1px;
-    height: 14px;
-    background: var(--border-strong);
-  }
-  .byline-meta {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    color: var(--text-dim);
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-  .byline-meta .updated {
-    color: var(--text-dim);
-  }
-  .byline-meta .updated::before {
-    content: 'Opdateret: ';
-  }
-  .reading-time { color: var(--text-dim); }
-
-  /* Article footer */
-  .article-footer {
-    margin-top: 72px;
-    padding-top: 40px;
-    border-top: 1px solid var(--border);
-  }
-
-  .back-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    transition: color .2s;
-    margin-bottom: 48px;
-  }
+  .kat-tag { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; padding: 5px 10px; border: 1px solid var(--accent); background: rgba(160,24,24,0.08); color: var(--accent-bright); }
+  .article-wrap h1 { font-family: var(--display); font-size: clamp(28px, 4vw, 44px); font-weight: 700; line-height: 1.1; letter-spacing: -0.025em; margin-bottom: 20px; color: var(--text); }
+  .article-excerpt { font-size: 19px; color: var(--text-muted); line-height: 1.6; margin-bottom: 32px; padding-bottom: 32px; border-bottom: 1px solid var(--border); }
+  .byline-bar { display: flex; align-items: center; gap: 20px; margin-bottom: 52px; flex-wrap: wrap; }
+  .byline-author { font-family: var(--display); font-size: 14px; font-weight: 600; color: var(--text); }
+  .byline-divider { width: 1px; height: 14px; background: var(--border-strong); }
+  .byline-meta { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; color: var(--text-dim); text-transform: uppercase; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .article-footer { margin-top: 72px; padding-top: 40px; border-top: 1px solid var(--border); }
+  .back-link { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); transition: color .2s; margin-bottom: 48px; }
   .back-link:hover { color: var(--accent-bright); }
   .back-link::before { content: '←'; }
-
-  /* Relaterede nyheder */
-  .related-title {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    color: var(--accent-bright);
-    text-transform: uppercase;
-    margin-bottom: 24px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .related-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-
-  .related-item {
-    display: grid;
-    grid-template-columns: 100px 1fr;
-    gap: 16px;
-    padding: 20px 0;
-    border-bottom: 1px solid var(--border);
-    text-decoration: none;
-    color: inherit;
-    transition: opacity .2s;
-  }
+  .related-title { font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; color: var(--accent-bright); text-transform: uppercase; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+  .related-list { display: flex; flex-direction: column; }
+  .related-item { display: grid; grid-template-columns: 100px 1fr; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--border); text-decoration: none; color: inherit; transition: opacity .2s; }
   .related-item:hover { opacity: 0.7; }
   .related-item:hover .related-item-title { color: var(--accent-bright); }
   .related-item:last-child { border-bottom: none; }
-
-  .related-item-img {
-    aspect-ratio: 4/3;
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-  }
-  .related-item-kat {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.15em;
-    color: var(--text-dim);
-    text-transform: uppercase;
-    margin-bottom: 6px;
-  }
-  .related-item-title {
-    font-family: var(--display);
-    font-size: 15px;
-    font-weight: 600;
-    line-height: 1.35;
-    letter-spacing: -0.005em;
-    transition: color .2s;
-  }
+  .related-item-img { aspect-ratio: 4/3; background: var(--bg-card); border: 1px solid var(--border); }
+  .related-item-kat { font-family: var(--mono); font-size: 10px; letter-spacing: 0.15em; color: var(--text-dim); text-transform: uppercase; margin-bottom: 6px; }
+  .related-item-title { font-family: var(--display); font-size: 15px; font-weight: 600; line-height: 1.35; letter-spacing: -0.005em; transition: color .2s; }
 </style>
 </head>
 <body>
-
-<!-- HEADER -->
 <header class="site-header">
   <div class="header-inner">
     <a href="/" class="logo">gyserguiden<span class="dot">.</span></a>
@@ -212,93 +63,55 @@
 <main>
   <div class="container">
     <article class="article-wrap">
-
-      <!-- Eyebrow: breadcrumb + kategori -->
       <div class="article-eyebrow">
-        <div class="breadcrumb">
-          <a href="/">Forside</a><span>·</span><a href="/nyheder/">Nyheder</a>
-        </div>
-        <!-- UDFYLD: Film / Serier / Spil / Bøger / Brætspil -->
-        <span class="kat-tag">KATEGORI</span>
+        <div class="breadcrumb"><a href="/">Forside</a><span>·</span><a href="/nyheder/">Nyheder</a></div>
+        <span class="kat-tag">Spil</span>
       </div>
-
-      <!-- UDFYLD: overskrift -->
-      <h1>OVERSKRIFT</h1>
-
-      <!-- UDFYLD: 2-3 sætninger der opsummerer nyheden (vises stort under overskriften) -->
-      <p class="article-excerpt">EXCERPT — Kort ingress der sætter scenen for artiklen i 2-3 præcise sætninger.</p>
-
-      <!-- Byline-bar -->
+      <h1>Silent Hill-instruktøren afslører nyt psykologisk horrorspil</h1>
+      <p class="article-excerpt">Efter tre års stilhed har studiet løftet sløret for et titelløst projekt med fokus på atmosfære frem for action. Ingen trailer endnu — kun en enkelt konceptbillede og en lovning.</p>
       <div class="byline-bar">
-        <!-- UDFYLD: forfatterens navn eller "Redaktionen" -->
-        <span class="byline-author">FORFATTERNAVN</span>
+        <span class="byline-author">Redaktionen</span>
         <div class="byline-divider"></div>
         <div class="byline-meta">
-          <!-- UDFYLD: publiceret dato, fx "19. maj 2026" -->
-          <span class="pub-date">DD. Måned ÅÅÅÅ</span>
-          <!-- SLET nedenstående linje hvis artiklen ikke er opdateret efter publicering -->
-          <span class="updated">DD. Måned ÅÅÅÅ</span>
+          <span>18. maj 2026</span>
           <span class="reading-time" id="readingTime"></span>
         </div>
       </div>
-
-      <!-- BRØDTEKST — skriv artiklen herunder. Brug <h2> til afsnitsoverskrifter. -->
       <div class="prose" id="articleBody">
+        <p>Masahiro Ito, den japanske kunstner og instruktør der er uløseligt forbundet med <em>Silent Hill</em>-seriens visuelle identitet, har via sociale medier bekræftet at han arbejder på et nyt horrorspil. Projektet er stadig i tidlig udvikling, men Ito beskriver det som "det mest personlige arbejde jeg nogensinde har lavet."</p>
 
-        <p>Første afsnit. Uddyb ingressen og giv kontekst.</p>
+        <h2>Atmosfære som omdrejningspunkt</h2>
+        <p>I modsætning til mange moderne horrorspil der lener sig op ad jump scares og action-sekvenser, lover Ito at det nye projekt vil prioritere psykologisk ubehag og atmosfære. "Jeg vil have spillerne til at føle sig utrygge uden at de ved hvorfor," skriver han.</p>
 
-        <h2>Afsnitsoverskrift</h2>
-        <p>Brødtekst. Skriv videre her.</p>
+        <h2>Hvad vi ved</h2>
+        <p>Udover et enkelt konceptbillede og Itos egne udtalelser er der ingen konkret information om platform, udgivelsesdato eller titel. Spillet udvikles angiveligt af et lille uafhængigt studie med under ti ansatte.</p>
 
-        <blockquote>
-          "Et relevant citat." — Kilde
-        </blockquote>
+        <blockquote>"Jeg laver ikke et Silent Hill-spil. Jeg laver noget værre." — Masahiro Ito på sociale medier</blockquote>
 
-        <h2>Afsnitsoverskrift</h2>
-        <p>Afsluttende afsnit — hvad betyder det, hvad sker der nu?</p>
-
+        <p>Vi holder øje og opdaterer denne artikel når mere information er tilgængeligt.</p>
       </div>
-
-      <!-- Footer: tilbage + relaterede nyheder -->
       <footer class="article-footer">
         <a href="/nyheder/" class="back-link">Alle nyheder</a>
-
         <div class="related-title">Relaterede nyheder</div>
         <div class="related-list">
-
-          <!-- UDFYLD: tilføj 2-3 relaterede nyheder -->
-          <a href="#" class="related-item">
+          <a href="/nyheder/2026-05-19-ari-aster-folkehorror.html" class="related-item">
             <div class="related-item-img" style="background: radial-gradient(ellipse at 40% 40%, #3a1010 0%, #0a0908 80%);"></div>
-            <div>
-              <div class="related-item-kat">KATEGORI · DD. Måned ÅÅÅÅ</div>
-              <div class="related-item-title">Titel på relateret nyhed</div>
-            </div>
+            <div><div class="related-item-kat">Film · 19. maj 2026</div><div class="related-item-title">Ari Aster vender tilbage med dansk-produceret folkehorror</div></div>
           </a>
-
-          <a href="#" class="related-item">
-            <div class="related-item-img" style="background: radial-gradient(ellipse at 60% 50%, #1a2030 0%, #0a0908 80%);"></div>
-            <div>
-              <div class="related-item-kat">KATEGORI · DD. Måned ÅÅÅÅ</div>
-              <div class="related-item-title">Titel på relateret nyhed</div>
-            </div>
+          <a href="/nyheder/2026-05-17-dansk-novellesamling.html" class="related-item">
+            <div class="related-item-img" style="background: radial-gradient(ellipse at 50% 30%, #2a1d10 0%, #0a0908 80%);"></div>
+            <div><div class="related-item-kat">Bøger · 17. maj 2026</div><div class="related-item-title">Dansk forlag genudgiver klassisk gysernovellesamling</div></div>
           </a>
-
         </div>
       </footer>
-
     </article>
   </div>
 </main>
 
-<!-- FOOTER -->
 <footer class="site-footer">
   <div class="container">
     <div class="footer-top">
-      <div class="footer-brand">
-        <h3>gyserguiden<span class="dot">.</span></h3>
-        <div class="tagline">Dansk horror i alle dens former</div>
-        <p>Anmeldelser, nyheder, guides og værktøjer for alle der elsker — eller bare lige tør prøve — det uhyggelige.</p>
-      </div>
+      <div class="footer-brand"><h3>gyserguiden<span class="dot">.</span></h3><div class="tagline">Dansk horror i alle dens former</div><p>Anmeldelser, nyheder, guides og værktøjer for alle der elsker — eller bare lige tør prøve — det uhyggelige.</p></div>
       <nav class="footer-nav">
         <div class="footer-col"><h4>Film</h4><ul><li><a href="/film/klassikere">Klassikere</a></li><li><a href="/film/nye">Nye udgivelser</a></li><li><a href="/film/subgenrer">Subgenrer</a></li><li><a href="/film/skjulte-perler">Skjulte perler</a></li><li><a href="/film/dansk">Dansk horror</a></li></ul></div>
         <div class="footer-col"><h4>Serier</h4><ul><li><a href="/serier/aktuelle">Aktuelle</a></li><li><a href="/serier/afsluttede">Afsluttede</a></li><li><a href="/serier/streaming">Streaming</a></li><li><a href="/serier/antologi">Antologi</a></li></ul></div>
@@ -307,23 +120,14 @@
         <div class="footer-col"><h4>Brætspil</h4><ul><li><a href="/braetspil/solo">Solo</a></li><li><a href="/braetspil/co-op">Co-op</a></li><li><a href="/braetspil/rpg">Horror RPG</a></li><li><a href="/braetspil/legendary">Legendary spil</a></li></ul></div>
       </nav>
     </div>
-    <div class="footer-bottom">
-      <span>© 2026 Gyserguiden · Lavet i Danmark</span>
-      <div class="links"><a href="#kontakt">Kontakt</a><a href="/om">Om Gyserguiden</a><a href="/cookies">Cookies</a><a href="/privatliv">Privatliv</a></div>
-    </div>
+    <div class="footer-bottom"><span>© 2026 Gyserguiden · Lavet i Danmark</span><div class="links"><a href="#kontakt">Kontakt</a><a href="/om">Om Gyserguiden</a><a href="/cookies">Cookies</a><a href="/privatliv">Privatliv</a></div></div>
   </div>
 </footer>
-
 <script src="/assets/js/main.js"></script>
 <script>
-  // Auto-beregn læsetid (~200 ord/min dansk)
   const body = document.getElementById('articleBody');
   const rt = document.getElementById('readingTime');
-  if (body && rt) {
-    const words = body.innerText.trim().split(/\s+/).length;
-    const mins = Math.max(1, Math.round(words / 200));
-    rt.textContent = '~ ' + mins + ' min. læsetid';
-  }
+  if (body && rt) { const words = body.innerText.trim().split(/\s+/).length; rt.textContent = '~ ' + Math.max(1, Math.round(words / 200)) + ' min. læsetid'; }
 </script>
 </body>
 </html>
