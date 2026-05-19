@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- UDFYLD: title = "TITEL — Gyserguiden" -->
+<title>TITEL — Gyserguiden</title>
+<!-- UDFYLD: description = kort resumé til Google (max 160 tegn) -->
+<meta name="description" content="">
+<link rel="stylesheet" href="/assets/css/base.css">
+<link rel="stylesheet" href="/assets/css/components.css">
+</head>
+<body>
+
+<!-- HEADER: kopier fra index.html -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo">gyserguiden<span class="dot">.</span></a>
+    <nav class="main-nav">
+      <div class="nav-item"><a class="nav-link" href="/film">Film<svg class="chevron" viewBox="0 0 10 10" fill="currentColor"><path d="M5 7L1 3h8z"/></svg></a>
+        <div class="dropdown">
+          <a href="/film/klassikere">Klassikere</a>
+          <a href="/film/nye">Nye udgivelser</a>
+          <a href="/film/subgenrer">Subgenrer</a>
+          <a href="/film/skjulte-perler">Skjulte perler</a>
+          <a href="/film/dansk">Dansk horror</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="/serier">Serier<svg class="chevron" viewBox="0 0 10 10" fill="currentColor"><path d="M5 7L1 3h8z"/></svg></a>
+        <div class="dropdown">
+          <a href="/serier/aktuelle">Aktuelle</a>
+          <a href="/serier/afsluttede">Afsluttede</a>
+          <a href="/serier/streaming">Streamingtjenester</a>
+          <a href="/serier/antologi">Antologiserier</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="/spil">Spil<svg class="chevron" viewBox="0 0 10 10" fill="currentColor"><path d="M5 7L1 3h8z"/></svg></a>
+        <div class="dropdown">
+          <a href="/spil/pc">PC</a><a href="/spil/konsol">Konsol</a>
+          <a href="/spil/indie">Indie</a><a href="/spil/vr">VR</a>
+          <a href="/spil/co-op">Co-op horror</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="/boeger">Bøger<svg class="chevron" viewBox="0 0 10 10" fill="currentColor"><path d="M5 7L1 3h8z"/></svg></a>
+        <div class="dropdown">
+          <a href="/boeger/romaner">Romaner</a><a href="/boeger/noveller">Noveller</a>
+          <a href="/boeger/forfattere">Forfattere</a><a href="/boeger/nyt-paa-dansk">Nyt på dansk</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-link" href="/braetspil">Brætspil<svg class="chevron" viewBox="0 0 10 10" fill="currentColor"><path d="M5 7L1 3h8z"/></svg></a>
+        <div class="dropdown">
+          <a href="/braetspil/solo">Solo</a><a href="/braetspil/co-op">Co-op</a>
+          <a href="/braetspil/rpg">Horror RPG</a><a href="/braetspil/legendary">Legendary spil</a>
+        </div>
+      </div>
+    </nav>
+    <div class="header-actions">
+      <button class="search-btn" aria-label="Søg"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></button>
+      <button class="hamburger" aria-label="Menu" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <details><summary>Film</summary><div class="sub-links"><a href="/film/klassikere">Klassikere</a><a href="/film/nye">Nye udgivelser</a><a href="/film/subgenrer">Subgenrer</a><a href="/film/skjulte-perler">Skjulte perler</a><a href="/film/dansk">Dansk horror</a></div></details>
+    <details><summary>Serier</summary><div class="sub-links"><a href="/serier/aktuelle">Aktuelle</a><a href="/serier/afsluttede">Afsluttede</a><a href="/serier/streaming">Streamingtjenester</a><a href="/serier/antologi">Antologiserier</a></div></details>
+    <details><summary>Spil</summary><div class="sub-links"><a href="/spil/pc">PC</a><a href="/spil/konsol">Konsol</a><a href="/spil/indie">Indie</a><a href="/spil/vr">VR</a><a href="/spil/co-op">Co-op horror</a></div></details>
+    <details><summary>Bøger</summary><div class="sub-links"><a href="/boeger/romaner">Romaner</a><a href="/boeger/noveller">Noveller</a><a href="/boeger/forfattere">Forfattere</a><a href="/boeger/nyt-paa-dansk">Nyt på dansk</a></div></details>
+    <details><summary>Brætspil</summary><div class="sub-links"><a href="/braetspil/solo">Solo</a><a href="/braetspil/co-op">Co-op</a><a href="/braetspil/rpg">Horror RPG</a><a href="/braetspil/legendary">Legendary spil</a></div></details>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+
+    <!-- Page header -->
+    <div class="page-header">
+      <div class="breadcrumb">
+        <a href="/">Forside</a><span>·</span>
+        <!-- UDFYLD: kategori-link, fx /film/klassikere -->
+        <a href="/anmeldelser">Anmeldelser</a><span>·</span>
+        <!-- UDFYLD: kategori-navn, fx Film -->
+        KATEGORI
+      </div>
+      <!-- UDFYLD: titlen på det anmeldte -->
+      <h1>TITEL</h1>
+      <!-- UDFYLD: kort tagline / første sætning -->
+      <p class="subtitle">UNDERTITEL ELLER TAGLINE</p>
+    </div>
+
+    <!-- Review meta boks -->
+    <div style="display:grid; grid-template-columns: 1fr 320px; gap: 80px; align-items: start; margin-bottom: 80px;">
+
+      <!-- Brødtekst -->
+      <article class="prose">
+        <!-- UDFYLD: anmeldelsesbillede hvis tilgængeligt -->
+        <!-- <img src="/assets/img/FILNAVN.jpg" alt="TITEL" style="margin-bottom:2em; width:100%;"> -->
+
+        <h2>Første afsnitsoverskrift</h2>
+        <p>Skriv anmeldelsen her. Brug &lt;h2&gt; og &lt;h3&gt; til at bryde teksten op. Hold det til 600–1200 ord.</p>
+
+        <blockquote>
+          Et direkte citat fra filmen, spillet eller bogen der illustrerer stemningen.
+        </blockquote>
+
+        <h2>Vurdering</h2>
+        <p>Saml op og giv din konklusion her. Hvad er det stærkeste? Hvad holder det tilbage?</p>
+      </article>
+
+      <!-- Sidebar med detaljer -->
+      <aside style="position:sticky; top:100px;">
+        <div style="background:var(--bg-elevated); border:1px solid var(--border); padding:32px;">
+
+          <!-- Karakter -->
+          <div style="text-align:center; padding-bottom:24px; margin-bottom:24px; border-bottom:1px solid var(--border);">
+            <!-- UDFYLD: karakter 1-6 -->
+            <div style="font-family:var(--display); font-size:72px; font-weight:700; color:var(--gold); line-height:1; letter-spacing:-0.04em;">X<span style="font-size:28px; color:var(--text-dim); font-weight:500;">/6</span></div>
+            <div style="font-family:var(--mono); font-size:11px; letter-spacing:0.2em; color:var(--text-dim); text-transform:uppercase; margin-top:8px;">Gyserguiden vurdering</div>
+          </div>
+
+          <!-- Meta-info tabel -->
+          <div style="display:grid; gap:12px; font-size:13px;">
+            <!-- UDFYLD: alle felter nedenfor -->
+            <div style="display:flex; justify-content:space-between; padding-bottom:12px; border-bottom:1px solid var(--border);">
+              <span style="color:var(--text-dim); font-family:var(--mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase;">Type</span>
+              <span style="color:var(--text);">Film / Serie / Spil / Bog / Brætspil</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding-bottom:12px; border-bottom:1px solid var(--border);">
+              <span style="color:var(--text-dim); font-family:var(--mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase;">Genre</span>
+              <span style="color:var(--text);">Folk Horror</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding-bottom:12px; border-bottom:1px solid var(--border);">
+              <span style="color:var(--text-dim); font-family:var(--mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase;">År</span>
+              <span style="color:var(--text);">2026</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding-bottom:12px; border-bottom:1px solid var(--border);">
+              <span style="color:var(--text-dim); font-family:var(--mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase;">Instruktør / Forfatter</span>
+              <span style="color:var(--text);">NAVN</span>
+            </div>
+            <div style="display:flex; justify-content:space-between;">
+              <span style="color:var(--text-dim); font-family:var(--mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase;">Anmeldt</span>
+              <span style="color:var(--text);">DD. Måned ÅÅÅÅ</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+  </div>
+</main>
+
+<!-- FOOTER: kopier fra index.html -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h3>gyserguiden<span class="dot">.</span></h3>
+        <div class="tagline">Dansk horror i alle dens former</div>
+        <p>Anmeldelser, nyheder, guides og værktøjer for alle der elsker — eller bare lige tør prøve — det uhyggelige.</p>
+      </div>
+      <nav class="footer-nav">
+        <div class="footer-col"><h4>Film</h4><ul><li><a href="/film/klassikere">Klassikere</a></li><li><a href="/film/nye">Nye udgivelser</a></li><li><a href="/film/subgenrer">Subgenrer</a></li><li><a href="/film/skjulte-perler">Skjulte perler</a></li><li><a href="/film/dansk">Dansk horror</a></li></ul></div>
+        <div class="footer-col"><h4>Serier</h4><ul><li><a href="/serier/aktuelle">Aktuelle</a></li><li><a href="/serier/afsluttede">Afsluttede</a></li><li><a href="/serier/streaming">Streaming</a></li><li><a href="/serier/antologi">Antologi</a></li></ul></div>
+        <div class="footer-col"><h4>Spil</h4><ul><li><a href="/spil/pc">PC</a></li><li><a href="/spil/konsol">Konsol</a></li><li><a href="/spil/indie">Indie</a></li><li><a href="/spil/vr">VR</a></li><li><a href="/spil/co-op">Co-op horror</a></li></ul></div>
+        <div class="footer-col"><h4>Bøger</h4><ul><li><a href="/boeger/romaner">Romaner</a></li><li><a href="/boeger/noveller">Noveller</a></li><li><a href="/boeger/forfattere">Forfattere</a></li><li><a href="/boeger/nyt-paa-dansk">Nyt på dansk</a></li></ul></div>
+        <div class="footer-col"><h4>Brætspil</h4><ul><li><a href="/braetspil/solo">Solo</a></li><li><a href="/braetspil/co-op">Co-op</a></li><li><a href="/braetspil/rpg">Horror RPG</a></li><li><a href="/braetspil/legendary">Legendary spil</a></li></ul></div>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Gyserguiden · Lavet i Danmark</span>
+      <div class="links"><a href="#kontakt">Kontakt</a><a href="/om">Om Gyserguiden</a><a href="/cookies">Cookies</a><a href="/privatliv">Privatliv</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

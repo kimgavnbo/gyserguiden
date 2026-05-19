@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- UDFYLD: title -->
+<title>OVERSKRIFT — Gyserguiden</title>
+<!-- UDFYLD: description (max 160 tegn) -->
+<meta name="description" content="">
+<link rel="stylesheet" href="/assets/css/base.css">
+<link rel="stylesheet" href="/assets/css/components.css">
+</head>
+<body>
+
+<!-- HEADER: identisk på alle sider — kopier fra _templates/anmeldelse.html -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo">gyserguiden<span class="dot">.</span></a>
+    <nav class="main-nav">
+      <div class="nav-item"><a class="nav-link" href="/film">Film<svg class="chevron" viewBox="0 0 10 10" fill="currentColor"><path d="M5 7L1 3h8z"/></svg></a><div class="dropdown"><a href="/film/klassikere">Klassikere</a><a href="/film/nye">Nye udgivelser</a><a href="/film/subgenrer">Subgenrer</a><a href="/film/skjulte-perler">Skjulte perler</a><a href="/film/dansk">Dansk horror</a></div></div>
+      <div class="nav-item"><a class="nav-link" href="/serier">Serier<svg class="chevron" viewBox="0 0 10 10" fill="currentColor"><path d="M5 7L1 3h8z"/></svg></a><div class="dropdown"><a href="/serier/aktuelle">Aktuelle</a><a href="/serier/afsluttede">Afsluttede</a><a href="/serier/streaming">Streamingtjenester</a><a href="/serier/antologi">Antologiserier</a></div></div>
+      <div class="nav-item"><a class="nav-link" href="/spil">Spil<svg class="chevron" viewBox="0 0 10 10" fill="currentColor"><path d="M5 7L1 3h8z"/></svg></a><div class="dropdown"><a href="/spil/pc">PC</a><a href="/spil/konsol">Konsol</a><a href="/spil/indie">Indie</a><a href="/spil/vr">VR</a><a href="/spil/co-op">Co-op horror</a></div></div>
+      <div class="nav-item"><a class="nav-link" href="/boeger">Bøger<svg class="chevron" viewBox="0 0 10 10" fill="currentColor"><path d="M5 7L1 3h8z"/></svg></a><div class="dropdown"><a href="/boeger/romaner">Romaner</a><a href="/boeger/noveller">Noveller</a><a href="/boeger/forfattere">Forfattere</a><a href="/boeger/nyt-paa-dansk">Nyt på dansk</a></div></div>
+      <div class="nav-item"><a class="nav-link" href="/braetspil">Brætspil<svg class="chevron" viewBox="0 0 10 10" fill="currentColor"><path d="M5 7L1 3h8z"/></svg></a><div class="dropdown"><a href="/braetspil/solo">Solo</a><a href="/braetspil/co-op">Co-op</a><a href="/braetspil/rpg">Horror RPG</a><a href="/braetspil/legendary">Legendary spil</a></div></div>
+    </nav>
+    <div class="header-actions">
+      <button class="search-btn" aria-label="Søg"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></button>
+      <button class="hamburger" aria-label="Menu" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <details><summary>Film</summary><div class="sub-links"><a href="/film/klassikere">Klassikere</a><a href="/film/nye">Nye udgivelser</a><a href="/film/subgenrer">Subgenrer</a><a href="/film/skjulte-perler">Skjulte perler</a><a href="/film/dansk">Dansk horror</a></div></details>
+    <details><summary>Serier</summary><div class="sub-links"><a href="/serier/aktuelle">Aktuelle</a><a href="/serier/afsluttede">Afsluttede</a><a href="/serier/streaming">Streamingtjenester</a><a href="/serier/antologi">Antologiserier</a></div></details>
+    <details><summary>Spil</summary><div class="sub-links"><a href="/spil/pc">PC</a><a href="/spil/konsol">Konsol</a><a href="/spil/indie">Indie</a><a href="/spil/vr">VR</a><a href="/spil/co-op">Co-op horror</a></div></details>
+    <details><summary>Bøger</summary><div class="sub-links"><a href="/boeger/romaner">Romaner</a><a href="/boeger/noveller">Noveller</a><a href="/boeger/forfattere">Forfattere</a><a href="/boeger/nyt-paa-dansk">Nyt på dansk</a></div></details>
+    <details><summary>Brætspil</summary><div class="sub-links"><a href="/braetspil/solo">Solo</a><a href="/braetspil/co-op">Co-op</a><a href="/braetspil/rpg">Horror RPG</a><a href="/braetspil/legendary">Legendary spil</a></div></details>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div style="max-width:800px; margin:0 auto; padding:80px 0;">
+
+      <!-- Meta -->
+      <div style="font-family:var(--mono); font-size:11px; letter-spacing:0.2em; color:var(--text-dim); text-transform:uppercase; margin-bottom:20px;">
+        <a href="/" style="color:var(--accent-bright);">Forside</a>
+        <span style="margin:0 8px;">·</span>
+        <a href="/nyheder" style="color:var(--accent-bright);">Nyheder</a>
+        <span style="margin:0 8px;">·</span>
+        <!-- UDFYLD: kategori fx Film, Spil, Bøger -->
+        KATEGORI
+      </div>
+
+      <!-- Dato og label -->
+      <div style="display:flex; align-items:center; gap:12px; margin-bottom:24px;">
+        <span style="font-family:var(--mono); font-size:10px; letter-spacing:0.2em; color:var(--accent-bright); text-transform:uppercase; padding:5px 10px; border:1px solid var(--accent); background:rgba(160,24,24,0.1);">Nyhed</span>
+        <!-- UDFYLD: dato -->
+        <span style="font-family:var(--mono); font-size:11px; color:var(--text-dim); letter-spacing:0.1em;">DD. Måned ÅÅÅÅ</span>
+      </div>
+
+      <!-- Overskrift -->
+      <!-- UDFYLD: overskrift -->
+      <h1 style="font-family:var(--display); font-size:clamp(32px,5vw,56px); font-weight:700; line-height:1.05; letter-spacing:-0.025em; margin-bottom:24px;">OVERSKRIFT</h1>
+
+      <!-- Ingress -->
+      <!-- UDFYLD: 2-3 sætninger der opsummerer nyheden -->
+      <p style="font-size:20px; color:var(--text-muted); line-height:1.6; margin-bottom:48px; padding-bottom:48px; border-bottom:1px solid var(--border);">INGRESS — Kort opsummering af nyheden i 2-3 sætninger.</p>
+
+      <!-- Brødtekst -->
+      <article class="prose">
+        <p>Brødtekst. Skriv nyheden her i detaljer. Brug flere afsnit.</p>
+
+        <h2>Baggrund</h2>
+        <p>Uddybende information, context, reaktioner, citater.</p>
+
+        <blockquote>
+          "Et citat fra en relevant kilde." — Kildens navn
+        </blockquote>
+
+        <p>Afsluttende afsnit med perspektiv eller hvad vi ved fremadrettet.</p>
+      </article>
+
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h3>gyserguiden<span class="dot">.</span></h3>
+        <div class="tagline">Dansk horror i alle dens former</div>
+        <p>Anmeldelser, nyheder, guides og værktøjer for alle der elsker — eller bare lige tør prøve — det uhyggelige.</p>
+      </div>
+      <nav class="footer-nav">
+        <div class="footer-col"><h4>Film</h4><ul><li><a href="/film/klassikere">Klassikere</a></li><li><a href="/film/nye">Nye udgivelser</a></li><li><a href="/film/subgenrer">Subgenrer</a></li><li><a href="/film/skjulte-perler">Skjulte perler</a></li><li><a href="/film/dansk">Dansk horror</a></li></ul></div>
+        <div class="footer-col"><h4>Serier</h4><ul><li><a href="/serier/aktuelle">Aktuelle</a></li><li><a href="/serier/afsluttede">Afsluttede</a></li><li><a href="/serier/streaming">Streaming</a></li><li><a href="/serier/antologi">Antologi</a></li></ul></div>
+        <div class="footer-col"><h4>Spil</h4><ul><li><a href="/spil/pc">PC</a></li><li><a href="/spil/konsol">Konsol</a></li><li><a href="/spil/indie">Indie</a></li><li><a href="/spil/vr">VR</a></li><li><a href="/spil/co-op">Co-op horror</a></li></ul></div>
+        <div class="footer-col"><h4>Bøger</h4><ul><li><a href="/boeger/romaner">Romaner</a></li><li><a href="/boeger/noveller">Noveller</a></li><li><a href="/boeger/forfattere">Forfattere</a></li><li><a href="/boeger/nyt-paa-dansk">Nyt på dansk</a></li></ul></div>
+        <div class="footer-col"><h4>Brætspil</h4><ul><li><a href="/braetspil/solo">Solo</a></li><li><a href="/braetspil/co-op">Co-op</a></li><li><a href="/braetspil/rpg">Horror RPG</a></li><li><a href="/braetspil/legendary">Legendary spil</a></li></ul></div>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Gyserguiden · Lavet i Danmark</span>
+      <div class="links"><a href="#kontakt">Kontakt</a><a href="/om">Om Gyserguiden</a><a href="/cookies">Cookies</a><a href="/privatliv">Privatliv</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

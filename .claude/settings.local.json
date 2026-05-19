@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem -Path \"c:\\\\Users\\\\Gavnbo\\\\.vscode\\\\gyserguiden\" -Recurse | Where-Object { !$_.PSIsContainer } | Select-Object FullName | ForEach-Object { $_.FullName.Replace\\(\"c:\\\\Users\\\\Gavnbo\\\\.vscode\\\\gyserguiden\\\\\", \"\"\\) } | Sort-Object)",
+      "PowerShell($env:PATH -split ';' | Where-Object { $_ -match 'git' }; if \\(Test-Path \"C:\\\\Program Files\\\\Git\\\\bin\\\\git.exe\"\\) { \"Git fundet: C:\\\\Program Files\\\\Git\\\\bin\\\\git.exe\" } elseif \\(Test-Path \"C:\\\\Program Files \\(x86\\)\\\\Git\\\\bin\\\\git.exe\"\\) { \"Git fundet \\(x86\\)\" } else { \"Git ikke fundet i standard stier\" })",
+      "PowerShell(Get-Command git -ErrorAction SilentlyContinue; where.exe git 2>$null; Get-ChildItem \"C:\\\\Users\\\\Gavnbo\\\\AppData\\\\Local\\\\Programs\" -ErrorAction SilentlyContinue | Where-Object { $_.Name -match 'git' })",
+      "PowerShell(cmd /c \"where git\" 2>&1)",
+      "PowerShell(cmd /c \"git --version\" 2>&1)",
+      "PowerShell(winget --version)",
+      "PowerShell(winget install --id Git.Git -e --source winget --accept-package-agreements --accept-source-agreements)",
+      "PowerShell($env:PATH += \";C:\\\\Program Files\\\\Git\\\\cmd\"; cd \"c:\\\\Users\\\\Gavnbo\\\\.vscode\\\\gyserguiden\"; git --version)"
+    ]
+  }
+}

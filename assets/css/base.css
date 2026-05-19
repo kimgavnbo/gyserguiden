@@ -1,0 +1,155 @@
+/* ============================================================
+   BASE.CSS — Design tokens, reset, typografi
+   gyserguiden.dk
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&display=swap');
+
+/* ---- Design tokens ---- */
+:root {
+  --bg:            #0a0908;
+  --bg-elevated:   #14110f;
+  --bg-card:       #1a1614;
+  --border:        #2a2420;
+  --border-strong: #3a322c;
+  --text:          #ede4d3;
+  --text-muted:    #8a8175;
+  --text-dim:      #5a5247;
+  --accent:        #a01818;
+  --accent-bright: #c42323;
+  --accent-glow:   rgba(160, 24, 24, 0.4);
+  --gold:          #b89968;
+  --display: 'Inter', system-ui, sans-serif;
+  --body:    'Inter', system-ui, sans-serif;
+  --mono:    'Inter', system-ui, sans-serif;
+
+  /* Spacing scale */
+  --space-xs:  8px;
+  --space-sm:  16px;
+  --space-md:  24px;
+  --space-lg:  40px;
+  --space-xl:  60px;
+  --space-2xl: 80px;
+
+  /* Layout */
+  --max-width: 1280px;
+  --container-padding: 24px;
+}
+
+/* ---- Reset ---- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+button { font-family: inherit; }
+
+/* ---- Body ---- */
+body {
+  font-family: var(--body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Grain texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' /%3E%3C/svg%3E");
+}
+
+/* ---- Layout ---- */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+/* ---- Sections ---- */
+.section       { padding: var(--space-xl) 0; }
+.section-first { padding-top: var(--space-2xl); }
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 20px;
+}
+
+.section-title {
+  font-family: var(--display);
+  font-size: clamp(26px, 3.4vw, 36px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+.section-title .ampersand { color: var(--accent); font-style: italic; font-weight: 500; }
+
+.section-link {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color .2s;
+  white-space: nowrap;
+}
+.section-link:hover { color: var(--accent-bright); }
+.section-link::after { content: ' →'; }
+
+/* ---- Animations ---- */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- Article / prose ---- */
+.prose {
+  max-width: 720px;
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--text);
+}
+.prose h2 {
+  font-family: var(--display);
+  font-size: clamp(22px, 2.5vw, 28px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 2.5em 0 0.75em;
+  color: var(--text);
+}
+.prose h3 {
+  font-family: var(--display);
+  font-size: 20px;
+  font-weight: 600;
+  margin: 2em 0 0.6em;
+}
+.prose p   { margin-bottom: 1.4em; color: var(--text-muted); }
+.prose strong { color: var(--text); font-weight: 600; }
+.prose em { color: var(--gold); font-style: italic; }
+.prose blockquote {
+  border-left: 3px solid var(--accent);
+  padding: 16px 24px;
+  margin: 2em 0;
+  background: var(--bg-elevated);
+  font-style: italic;
+  color: var(--text-muted);
+}
+.prose a { color: var(--accent-bright); border-bottom: 1px solid var(--border-strong); transition: border-color .2s; }
+.prose a:hover { border-color: var(--accent-bright); }
