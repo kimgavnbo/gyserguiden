@@ -3,187 +3,489 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gyserguiden — Kommer snart</title>
-<meta name="description" content="Gyserguiden — Danmarks nye site om horror i alle dens former. Film, serier, spil, bøger og brætspil. Kommer snart.">
-<meta name="robots" content="noindex, nofollow">
+<title>Gyserguiden — Dansk horror i alle dens former</title>
+<meta name="description" content="Anmeldelser, nyheder, guides og interaktive tools om horror — film, serier, spil, bøger og brætspil.">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap" rel="stylesheet">
-
-<style>
-  :root {
-    --bg:            #0a0908;
-    --text:          #ede4d3;
-    --text-muted:    #8a8175;
-    --text-dim:      #5a5247;
-    --accent:        #a01818;
-    --accent-bright: #c42323;
-    --gold:          #b89968;
-    --border:        #2a2420;
-  }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    font-family: 'Inter', system-ui, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    -webkit-font-smoothing: antialiased;
-    position: relative;
-    overflow: hidden;
-  }
-
-  /* Grain */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 10;
-    opacity: 0.04;
-    mix-blend-mode: overlay;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' /%3E%3C/svg%3E");
-  }
-
-  /* Atmosfærisk baggrund */
-  .bg-glow {
-    position: fixed;
-    inset: 0;
-    background:
-      radial-gradient(ellipse at 30% 60%, rgba(160, 24, 24, 0.12) 0%, transparent 55%),
-      radial-gradient(ellipse at 70% 40%, rgba(42, 10, 10, 0.3) 0%, transparent 60%);
-    pointer-events: none;
-  }
-
-  .wrapper {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    padding: 40px 24px;
-    max-width: 640px;
-  }
-
-  /* Logo */
-  .logo {
-    font-size: 28px;
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    color: var(--text);
-    margin-bottom: 64px;
-    display: block;
-  }
-  .logo .dot {
-    color: var(--accent);
-    animation: pulse 3s ease-in-out infinite;
-  }
-
-  /* Divider */
-  .divider {
-    width: 40px;
-    height: 1px;
-    background: var(--border);
-    margin: 0 auto 48px;
-    position: relative;
-  }
-  .divider::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 6px;
-    height: 6px;
-    background: var(--accent);
-  }
-
-  /* Tagline */
-  .tagline {
-    font-family: 'Inter', system-ui, sans-serif;
-    font-size: 11px;
-    letter-spacing: 0.25em;
-    color: var(--accent-bright);
-    text-transform: uppercase;
-    margin-bottom: 28px;
-  }
-
-  /* Heading */
-  h1 {
-    font-size: clamp(36px, 6vw, 60px);
-    font-weight: 700;
-    line-height: 1.05;
-    letter-spacing: -0.03em;
-    margin-bottom: 24px;
-  }
-  h1 em {
-    font-style: italic;
-    color: var(--gold);
-    font-weight: 600;
-  }
-
-  /* Body text */
-  p {
-    font-size: 17px;
-    color: var(--text-muted);
-    line-height: 1.65;
-    max-width: 480px;
-    margin: 0 auto;
-  }
-
-  /* Footer */
-  .footer-note {
-    position: fixed;
-    bottom: 32px;
-    left: 0;
-    right: 0;
-    text-align: center;
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    color: var(--text-dim);
-    text-transform: uppercase;
-    z-index: 2;
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50%       { opacity: 0.4; }
-  }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(16px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-  .logo       { animation: fadeUp 0.7s ease-out 0.1s both; }
-  .divider    { animation: fadeUp 0.7s ease-out 0.25s both; }
-  .tagline    { animation: fadeUp 0.7s ease-out 0.35s both; }
-  h1          { animation: fadeUp 0.7s ease-out 0.45s both; }
-  p           { animation: fadeUp 0.7s ease-out 0.6s both; }
-  .footer-note { animation: fadeUp 0.7s ease-out 0.8s both; }
-</style>
+<link rel="stylesheet" href="/assets/css/base.css">
+<link rel="stylesheet" href="/assets/css/components.css">
 </head>
 <body>
 
-<div class="bg-glow"></div>
+<!-- =================== HEADER =================== -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo">gyserguiden<span class="dot">.</span></a>
 
-<div class="wrapper">
-  <span class="logo">gyserguiden<span class="dot">.</span></span>
+    <nav class="main-nav">
+      <div class="nav-item">
+        <a class="nav-link" href="/film">Film
+          <svg class="chevron" viewBox="0 0 10 10" fill="currentColor"><path d="M5 7L1 3h8z"/></svg>
+        </a>
+        <div class="dropdown">
+          <a href="/film/klassikere">Klassikere</a>
+          <a href="/film/nye">Nye udgivelser</a>
+          <a href="/film/subgenrer">Subgenrer</a>
+          <a href="/film/skjulte-perler">Skjulte perler</a>
+          <a href="/film/dansk">Dansk horror</a>
+        </div>
+      </div>
 
-  <div class="divider"></div>
+      <div class="nav-item">
+        <a class="nav-link" href="/serier">Serier
+          <svg class="chevron" viewBox="0 0 10 10" fill="currentColor"><path d="M5 7L1 3h8z"/></svg>
+        </a>
+        <div class="dropdown">
+          <a href="/serier/aktuelle">Aktuelle</a>
+          <a href="/serier/afsluttede">Afsluttede</a>
+          <a href="/serier/streaming">Streamingtjenester</a>
+          <a href="/serier/antologi">Antologiserier</a>
+        </div>
+      </div>
 
-  <div class="tagline">Dansk horror i alle dens former</div>
+      <div class="nav-item">
+        <a class="nav-link" href="/spil">Spil
+          <svg class="chevron" viewBox="0 0 10 10" fill="currentColor"><path d="M5 7L1 3h8z"/></svg>
+        </a>
+        <div class="dropdown">
+          <a href="/spil/pc">PC</a>
+          <a href="/spil/konsol">Konsol</a>
+          <a href="/spil/indie">Indie</a>
+          <a href="/spil/vr">VR</a>
+          <a href="/spil/co-op">Co-op horror</a>
+        </div>
+      </div>
 
-  <h1>Noget <em>uhyggeligt</em><br>er på vej</h1>
+      <div class="nav-item">
+        <a class="nav-link" href="/boeger">Bøger
+          <svg class="chevron" viewBox="0 0 10 10" fill="currentColor"><path d="M5 7L1 3h8z"/></svg>
+        </a>
+        <div class="dropdown">
+          <a href="/boeger/romaner">Romaner</a>
+          <a href="/boeger/noveller">Noveller</a>
+          <a href="/boeger/forfattere">Forfattere</a>
+          <a href="/boeger/nyt-paa-dansk">Nyt på dansk</a>
+        </div>
+      </div>
 
-  <p>Vi er ved at bygge Danmarks nye destination for horror — film, serier, spil, bøger og brætspil. Anmeldelser, nyheder, guides og interaktive tools. Kom tilbage snart.</p>
-</div>
+      <div class="nav-item">
+        <a class="nav-link" href="/braetspil">Brætspil
+          <svg class="chevron" viewBox="0 0 10 10" fill="currentColor"><path d="M5 7L1 3h8z"/></svg>
+        </a>
+        <div class="dropdown">
+          <a href="/braetspil/solo">Solo</a>
+          <a href="/braetspil/co-op">Co-op</a>
+          <a href="/braetspil/rpg">Horror RPG</a>
+          <a href="/braetspil/legendary">Legendary spil</a>
+        </div>
+      </div>
+    </nav>
 
-<div class="footer-note">© 2026 Gyserguiden · Lavet i Danmark</div>
+    <div class="header-actions">
+      <button class="search-btn" aria-label="Søg">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="7"/>
+          <path d="m20 20-4-4"/>
+        </svg>
+      </button>
+      <button class="hamburger" aria-label="Menu" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <details>
+      <summary>Film</summary>
+      <div class="sub-links">
+        <a href="/film/klassikere">Klassikere</a>
+        <a href="/film/nye">Nye udgivelser</a>
+        <a href="/film/subgenrer">Subgenrer</a>
+        <a href="/film/skjulte-perler">Skjulte perler</a>
+        <a href="/film/dansk">Dansk horror</a>
+      </div>
+    </details>
+    <details>
+      <summary>Serier</summary>
+      <div class="sub-links">
+        <a href="/serier/aktuelle">Aktuelle</a>
+        <a href="/serier/afsluttede">Afsluttede</a>
+        <a href="/serier/streaming">Streamingtjenester</a>
+        <a href="/serier/antologi">Antologiserier</a>
+      </div>
+    </details>
+    <details>
+      <summary>Spil</summary>
+      <div class="sub-links">
+        <a href="/spil/pc">PC</a>
+        <a href="/spil/konsol">Konsol</a>
+        <a href="/spil/indie">Indie</a>
+        <a href="/spil/vr">VR</a>
+        <a href="/spil/co-op">Co-op horror</a>
+      </div>
+    </details>
+    <details>
+      <summary>Bøger</summary>
+      <div class="sub-links">
+        <a href="/boeger/romaner">Romaner</a>
+        <a href="/boeger/noveller">Noveller</a>
+        <a href="/boeger/forfattere">Forfattere</a>
+        <a href="/boeger/nyt-paa-dansk">Nyt på dansk</a>
+      </div>
+    </details>
+    <details>
+      <summary>Brætspil</summary>
+      <div class="sub-links">
+        <a href="/braetspil/solo">Solo</a>
+        <a href="/braetspil/co-op">Co-op</a>
+        <a href="/braetspil/rpg">Horror RPG</a>
+        <a href="/braetspil/legendary">Legendary spil</a>
+      </div>
+    </details>
+  </div>
+</header>
+
+<!-- =================== NYHEDER =================== -->
+<section class="section section-first">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-title">Nyheder</h2>
+      <a href="/nyheder" class="section-link">Se alle nyheder</a>
+    </div>
+
+    <div class="news-grid">
+      <div class="news-main">
+        <article class="news-item">
+          <div class="img n1"></div>
+          <div>
+            <div class="meta">19. Maj 2026 · Film</div>
+            <h3>Ari Aster vender tilbage med dansk-produceret folkehorror</h3>
+            <p>Den amerikanske instruktør har bekræftet at hans næste projekt optages på Bornholm, med dansk produktion og delvist dansktalende cast.</p>
+          </div>
+        </article>
+
+        <article class="news-item">
+          <div class="img n2"></div>
+          <div>
+            <div class="meta">18. Maj 2026 · Spil</div>
+            <h3>Silent Hill-instruktøren afslører nyt psykologisk horrorspil</h3>
+            <p>Efter tre års stilhed har studiet løftet sløret for et titelløst projekt med fokus på atmosfære frem for action.</p>
+          </div>
+        </article>
+
+        <article class="news-item">
+          <div class="img n3"></div>
+          <div>
+            <div class="meta">17. Maj 2026 · Bøger</div>
+            <h3>Dansk forlag genudgiver klassisk gysernovellesamling</h3>
+            <p>For første gang i tre årtier kan man nu igen få fat i den hyldede samling — komplet med nye illustrationer.</p>
+          </div>
+        </article>
+      </div>
+
+      <aside class="news-aside">
+        <div class="aside-title">Trender lige nu</div>
+        <ol class="trending-list">
+          <li>
+            <span class="num">01</span>
+            <div class="info">
+              <div class="cat">Tools · Test</div>
+              <h4>Hvilken slasher er du? Tag testen og find ud af det</h4>
+            </div>
+          </li>
+          <li>
+            <span class="num">02</span>
+            <div class="info">
+              <div class="cat">Guide · Streaming</div>
+              <h4>De 25 bedste horrorfilm på dansk streaming lige nu</h4>
+            </div>
+          </li>
+          <li>
+            <span class="num">03</span>
+            <div class="info">
+              <div class="cat">Anmeldelse</div>
+              <h4>Solhverv: Den danske folk horror vi havde brug for?</h4>
+            </div>
+          </li>
+          <li>
+            <span class="num">04</span>
+            <div class="info">
+              <div class="cat">Nyhed</div>
+              <h4>Stephen King roser ny dansk gyserroman: "Genuinely unsettling"</h4>
+            </div>
+          </li>
+          <li>
+            <span class="num">05</span>
+            <div class="info">
+              <div class="cat">Feature</div>
+              <h4>Hvorfor 70'er-horror oplever en kraftig renæssance i 2026</h4>
+            </div>
+          </li>
+        </ol>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- =================== SENESTE ANMELDELSER =================== -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-title">Seneste anmeldelser</h2>
+      <a href="/anmeldelser" class="section-link">Se alle anmeldelser</a>
+    </div>
+
+    <div class="review-grid">
+      <article class="review-card">
+        <div class="img img-1">
+          <span class="img-label">Film</span>
+          <span class="rating">4<span>/6</span></span>
+        </div>
+        <div class="category">Folk Horror · 2026</div>
+        <h3>Solhverv</h3>
+        <p class="excerpt">En dansk debutfilm der vover at lege med vores nordiske myter — og næsten lykkes.</p>
+      </article>
+
+      <article class="review-card">
+        <div class="img img-2">
+          <span class="img-label">Spil</span>
+          <span class="rating">5<span>/6</span></span>
+        </div>
+        <div class="category">Survival Horror · PC</div>
+        <h3>The Pale Below</h3>
+        <p class="excerpt">Indie-perle der trækker veksler på Resident Evil-arven uden at blive en kopi.</p>
+      </article>
+
+      <article class="review-card">
+        <div class="img img-3">
+          <span class="img-label">Bog</span>
+          <span class="rating">6<span>/6</span></span>
+        </div>
+        <div class="category">Gotisk · Roman</div>
+        <h3>Hus i tåge</h3>
+        <p class="excerpt">Stille, gys-fyldt prosa der minder os om, at det værste ofte ligger i det usagte.</p>
+      </article>
+
+      <article class="review-card">
+        <div class="img img-4">
+          <span class="img-label">Serie</span>
+          <span class="rating">3<span>/6</span></span>
+        </div>
+        <div class="category">Antologi · Netflix</div>
+        <h3>Midnatsbreve</h3>
+        <p class="excerpt">Stærke episoder skæmmes af en uensartet sæson — og en finale der ikke leverer.</p>
+      </article>
+
+      <article class="review-card">
+        <div class="img img-5">
+          <span class="img-label">Brætspil</span>
+          <span class="rating">5<span>/6</span></span>
+        </div>
+        <div class="category">Co-op · 2–5 spillere</div>
+        <h3>Det forladte sanatorium</h3>
+        <p class="excerpt">Atmosfærisk dansk udgivelse der balancerer narrative og taktik smukt.</p>
+      </article>
+
+      <article class="review-card">
+        <div class="img img-6">
+          <span class="img-label">Film</span>
+          <span class="rating">4<span>/6</span></span>
+        </div>
+        <div class="category">Slasher · Genindspilning</div>
+        <h3>Halloween: Begyndelsen</h3>
+        <p class="excerpt">Hverken bedre eller værre end forventet — men en svag arv vejer tungt.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- =================== GUIDES =================== -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-title">Guides <span class="ampersand">&amp;</span> features</h2>
+      <a href="/guides" class="section-link">Se alle guides</a>
+    </div>
+
+    <div class="guides-grid">
+      <article class="guide-card">
+        <div class="num">Guide № 01</div>
+        <h3>Sådan starter du med horror — uden at miste søvnen</h3>
+        <p>En kuraterer indgang til genren for dig, der gerne vil prøve gys af, men ikke ved hvor du skal begynde.</p>
+        <span class="read-more">Læs guiden</span>
+      </article>
+
+      <article class="guide-card">
+        <div class="num">Guide № 02</div>
+        <h3>Subgenrer forklaret: Fra giallo til folk horror</h3>
+        <p>Vi guider dig gennem de vigtigste subgenrer, deres historie og de tre titler du bør starte med.</p>
+        <span class="read-more">Læs guiden</span>
+      </article>
+
+      <article class="guide-card">
+        <div class="num">Guide № 03</div>
+        <h3>Dansk horror gennem 100 år — en tidslinje</h3>
+        <p>Fra Dreyer til i dag: De vigtigste danske bidrag til verdens horrorhistorie, samlet på ét sted.</p>
+        <span class="read-more">Læs guiden</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- =================== INTERAKTIVE TOOLS =================== -->
+<section class="tools-section">
+  <div class="container">
+    <div class="tools-intro">
+      <span class="label">Interaktive tools</span>
+      <h2>Find din næste <em>nattesvedsoplevelse</em></h2>
+      <p>Vores værktøjer er bygget til at hjælpe dig med at finde præcis det rette horror-indhold — uanset om du leder efter et marathon, en blød introduktion eller en regulær traumeoplevelse.</p>
+    </div>
+
+    <div class="tools-grid">
+      <article class="tool-card">
+        <svg class="tool-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="24" cy="24" r="20"/>
+          <circle cx="17" cy="20" r="2.5" fill="currentColor"/>
+          <circle cx="31" cy="20" r="2.5" fill="currentColor"/>
+          <path d="M16 32c2-2 5-3 8-3s6 1 8 3"/>
+        </svg>
+        <h3>Hvilken horrorfilm passer til dig?</h3>
+        <p>Svar på 8 spørgsmål og få en personlig anbefaling baseret på humør, smag og tolerance.</p>
+        <span class="cta">Start testen</span>
+      </article>
+
+      <article class="tool-card">
+        <svg class="tool-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="8" y="12" width="32" height="28" rx="2"/>
+          <path d="M16 8v8M32 8v8M8 22h32"/>
+          <circle cx="24" cy="30" r="3" fill="currentColor"/>
+        </svg>
+        <h3>Skrækkalenderen</h3>
+        <p>31 dage, 31 film, 31 stemninger. Vores oktober-kalender med daglig anbefaling og guide.</p>
+        <span class="cta">Åbn kalenderen</span>
+      </article>
+
+      <article class="tool-card">
+        <svg class="tool-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M24 6l3 12h12l-10 8 4 12-9-7-9 7 4-12-10-8h12z"/>
+        </svg>
+        <h3>Subgenre-finder</h3>
+        <p>Vælg din stemning, tolerance og setting — og få tre håndplukkede titler skræddersyet til dig.</p>
+        <span class="cta">Find din subgenre</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- =================== FOOTER =================== -->
+<footer class="site-footer">
+  <div class="container">
+
+    <!-- Contact form -->
+    <div class="contact-section" id="kontakt">
+      <div class="contact-grid">
+        <div class="contact-intro">
+          <h3>Hør fra <em>dig</em></h3>
+          <p>Har du fundet en fejl, vil du anbefale en titel, eller har du spørgsmål til Gyserguiden? Skriv til os — vi læser hver eneste besked.</p>
+          <div class="extra">Vi svarer typisk inden for 48 timer</div>
+        </div>
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('Tak — beskeden er afsendt (placeholder).');">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="navn">Navn</label>
+              <input type="text" id="navn" name="navn" required>
+            </div>
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="emne">Emne</label>
+            <input type="text" id="emne" name="emne" required>
+          </div>
+          <div class="form-field">
+            <label for="besked">Besked</label>
+            <textarea id="besked" name="besked" required></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Send besked</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Top -->
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h3>gyserguiden<span class="dot">.</span></h3>
+        <div class="tagline">Dansk horror i alle dens former</div>
+        <p>Anmeldelser, nyheder, guides og værktøjer for alle der elsker — eller bare lige tør prøve — det uhyggelige.</p>
+      </div>
+
+      <nav class="footer-nav">
+        <div class="footer-col">
+          <h4>Film</h4>
+          <ul>
+            <li><a href="/film/klassikere">Klassikere</a></li>
+            <li><a href="/film/nye">Nye udgivelser</a></li>
+            <li><a href="/film/subgenrer">Subgenrer</a></li>
+            <li><a href="/film/skjulte-perler">Skjulte perler</a></li>
+            <li><a href="/film/dansk">Dansk horror</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Serier</h4>
+          <ul>
+            <li><a href="/serier/aktuelle">Aktuelle</a></li>
+            <li><a href="/serier/afsluttede">Afsluttede</a></li>
+            <li><a href="/serier/streaming">Streaming</a></li>
+            <li><a href="/serier/antologi">Antologi</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Spil</h4>
+          <ul>
+            <li><a href="/spil/pc">PC</a></li>
+            <li><a href="/spil/konsol">Konsol</a></li>
+            <li><a href="/spil/indie">Indie</a></li>
+            <li><a href="/spil/vr">VR</a></li>
+            <li><a href="/spil/co-op">Co-op horror</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Bøger</h4>
+          <ul>
+            <li><a href="/boeger/romaner">Romaner</a></li>
+            <li><a href="/boeger/noveller">Noveller</a></li>
+            <li><a href="/boeger/forfattere">Forfattere</a></li>
+            <li><a href="/boeger/nyt-paa-dansk">Nyt på dansk</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Brætspil</h4>
+          <ul>
+            <li><a href="/braetspil/solo">Solo</a></li>
+            <li><a href="/braetspil/co-op">Co-op</a></li>
+            <li><a href="/braetspil/rpg">Horror RPG</a></li>
+            <li><a href="/braetspil/legendary">Legendary spil</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Gyserguiden · Lavet i Danmark</span>
+      <div class="links">
+        <a href="/forum">Forum</a>
+        <a href="#kontakt">Kontakt</a>
+        <a href="/om">Om Gyserguiden</a>
+        <a href="/cookies">Cookies</a>
+        <a href="/privatliv">Privatliv</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/main.js"></script>
 
 </body>
 </html>
