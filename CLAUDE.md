@@ -95,6 +95,15 @@ gyserguiden/
 - HTML + JavaScript, selfcontained
 - Fil: `tools/[slug].html`
 
+## Tone of Voice
+
+Se `tone-of-voice.md` for den fulde guide. Kort version:
+
+- Skriv til den **vidende entusiast** — forklar ikke det åbenlyse
+- Reference: **IGN/Eurogamer på sit bedste** — engageret, specifik, med holdning
+- **Aldrig:** clickbait-overskrifter, akademisk passiv form, teatralsk sprog, uformel slang
+- Første sætning skal ramme. Kom til sagen med det samme.
+
 ## Karakterskala (anmeldelser)
 
 Gyserguiden bruger en **1–6-skala** (ikke 5 eller 10):
